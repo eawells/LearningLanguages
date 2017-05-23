@@ -1,15 +1,22 @@
 #include <stdio.h>
 
-int main(char *argc, char **argv[]){
+int main (){//char *argc, char **argv[]){
+
+
   printf("Hello Victory!\n");
-  int var = 15;
-  int *ip;
+  int  var = 15;
+  int  *ip;
+  printf("%x hex\n", &var);
+  printf("%d deci\n", &var);
   ip = &var;
-  printf("%x\n", ip);
-  printf("%x\n", &var);
-  printf("%d\n", *ip);
+  printf("%d deci\n", ip);
+  printf("%x hex\n", *ip );
+
+  int var2 = 2;
+  int *v2;
+  v2 = &var2;
+  printf("%x hex\n", *v2);
 
   return 0;
 }
-
 
