@@ -9,6 +9,7 @@ int square(int x){
 
 int main (int argc, char **argv[]){
 
+  repl(argc,argv);
  
   printf("Hello Victory!\n");
   int  var = 15;
