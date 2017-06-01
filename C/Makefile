@@ -9,5 +9,6 @@ practice2:
 
 clean:
 	rm -f pract
+	rm -f sky
 sky:
 	gcc sky.c -o sky
