@@ -1,4 +1,6 @@
 #include <stdio.h>
+#define MAX_LENGTH 200
+#include <string.h>
 
 int repl(char *argc, char **argv){
   char str[20];
@@ -6,6 +8,15 @@ int repl(char *argc, char **argv){
     printf("New repl>");
     fgets (str, 20, stdin);
     printf("=>");
+    /***** COPY AND PASTED from repeat.c ******
+       printf("New repl>");
+    //scanf("%d %c", &i, &c);
+    // scanf("%s", &str);
+    fgets (str, 20, stdin);
+    printf("=>");
+    //printf("%d %c\n", i, str);
+    *****                                ****** 
+    **/
     int first = 0;
     int second = 0;
     // int ans =0;
@@ -13,6 +24,7 @@ int repl(char *argc, char **argv){
     char op;
     // for(int i=0; i <strlen(str); i++){
     //printf("%c\n", str[i]);
+    
     first = str[0]-'0';
     op = str[1];
     second = str[2]-'0';
@@ -35,7 +47,6 @@ int repl(char *argc, char **argv){
 }
   
 char *read(char *program){
-  
   return program;
 }
 
@@ -95,8 +106,41 @@ int main(char *argc, char **argv[]){
   //printf("%s\n", eval(read("program")));
   //repl(argc, argv);
   // read_file();
-  write_file();
+  //write_file();
+  int switch_example(){
+    char my_char;
+    my_char = 'I';
+    switch(my_char){
+    case '1':
+      printf("It's one\n");
+      break;
+    case 'b':
+      printf("It's a b\n");
+      break;
+    case 'I':
+      printf("It's an I\n");
+      break;
+    default:
+	printf("Your char is not in this variable\n");
+    }
+    return 0;
+  }
+  //printf("%s\n", switch_example());
+
+  char string[50] = "Hey, how are-you doing?";
+  const char delim[2] = " ";
+  char *token;
+  //char *token2;
+  token = strtok(string,delim);
+  //token2 = strtok(NULL,delim);
+ 
+  while(token != NULL){
+    printf("%s\n", token);
+    token = strtok(NULL,delim);
+  }
+  // printf("%s\n",token);
+  //printf("%s\n", token2);
+  
   return 0;
   
   }
- 
