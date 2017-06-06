@@ -10,5 +10,8 @@ practice2:
 clean:
 	rm -f pract
 	rm -f sky
+	rm -f tok
 sky:
 	gcc sky.c -o sky
+tok:
+	gcc tokensSwitches.c -o tok
