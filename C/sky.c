@@ -2,10 +2,10 @@
 #define MAX_LENGTH 200
 #include <string.h>
 
-int repl(char *argc, char **argv){
+int repl(){
   char str[20];
   while (1){
-    printf("New repl>");
+    printf("sky>");
     fgets (str, 20, stdin);
     printf("=>");
     /***** COPY AND PASTED from repeat.c ******
@@ -24,10 +24,11 @@ int repl(char *argc, char **argv){
     char op;
     // for(int i=0; i <strlen(str); i++){
     //printf("%c\n", str[i]);
-    
-    first = str[0]-'0';
+   
+    first = str[3]-'0';
     op = str[1];
-    second = str[2]-'0';
+    second = str[5]-'0';
+
     if(op == '*'){
       ans = first * second;
     }
@@ -102,12 +103,8 @@ int  fileio (){
   return 0;
 }
 
-int main(char *argc, char **argv[]){
-  //printf("%s\n", eval(read("program")));
-  //repl(argc, argv);
-  // read_file();
-  //write_file();
-  int switch_example(){
+void prototypes(){
+   int switch_example(){
     char my_char;
     my_char = 'I';
     switch(my_char){
@@ -140,7 +137,16 @@ int main(char *argc, char **argv[]){
   }
   // printf("%s\n",token);
   //printf("%s\n", token2);
-  
+
+
+}
+
+int main(char *argc, char **argv[]){
+  //printf("%s\n", eval(read("program")));
+  //repl(argc, argv);
+  // read_file();
+  //write_file(); 
+  repl();
   return 0;
   
   }
