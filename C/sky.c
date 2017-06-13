@@ -8,15 +8,41 @@ int repl(char *argc, char **argv){
     printf("New repl>");
     fgets (str, 20, stdin);
     printf("=>");
-    /***** COPY AND PASTED from repeat.c ******
-       printf("New repl>");
-    //scanf("%d %c", &i, &c);
-    // scanf("%s", &str);
-    fgets (str, 20, stdin);
-    printf("=>");
-    //printf("%d %c\n", i, str);
-    *****                                ****** 
-    **/
+
+     float ans = 0;
+  
+  const char delim[2] = " ";
+  char *token;
+  char *token2;
+  char *token3;
+  token = strtok(str, delim);
+  token2 = strtok(NULL, delim);
+  token3 = strtok(NULL, delim);
+  
+  int two = atoi(token2);
+  int three = atoi(token3);
+ 
+  if(strcmp(token, "(*") == 0){
+    ans = two * three;
+    printf("%4.1f works\n", ans);
+  }
+  else if(strcmp(token, "(/") == 0){
+    ans = two / three;
+    printf("%5.1f\n", ans);
+    
+  }
+  else if(strcmp(token, "(+") == 0){
+    ans = two + three;
+    printf("%4.1f works\n", ans);
+  }
+  else if(strcmp(token, "(-") == 0){
+    ans = two - three;
+    printf("%4.1f works\n", ans);
+  }
+  else{
+    printf("Please enter a *,/,+,- operator\n");
+  }
+    
     int first = 0;
     int second = 0;
     // int ans =0;

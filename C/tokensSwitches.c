@@ -3,11 +3,11 @@
 #define MAX_LENGTH 200
 #include <string.h>
 
-//figure out how to use strtok and switches to evaluate functions given to the
+//figure out how to use strtok to evaluate functions given to the
 //repl
 int main(char *argc, char **argv[]){
   float ans = 0;
-  char string[20]  = "(* 3 10)";
+  char string[20]  = "(/ 12 24)";
   const char delim[2] = " ";
   char *token;
   char *token2;
@@ -16,27 +16,27 @@ int main(char *argc, char **argv[]){
   token2 = strtok(NULL, delim);
   token3 = strtok(NULL, delim);
   
-  const char delim2[2] = ")";
+  //const char delim2[2] = ")";
   
   int two = atoi(token2);
   int three = atoi(token3);
-  //printf("Lucas: %d\n", two);
   
-  if(strcmp(token, "(*") == 0){
+  if(strncmp(token, "(*", 10) == 0){
     ans = two * three;
     printf("%4.1f works\n", ans);
   }
-  else if(strcmp(token, "(/") == 0){
-    ans = two / three;
-    printf("Doesn't work");
+  else if(strncmp(token, "(/", 10) == 0){
+    ans = (float) two / (float) three;
+    printf("%5.1f\n", ans);
+    
   }
-  else if(strcmp(token, "(+") == 0){
+  else if(strncmp(token, "(+", 10) == 0){
     ans = two + three;
-    printf("Doesn't work");
+    printf("%4.1f works\n", ans);
   }
-  else if(strcmp(token, "(-") == 0){
+  else if(strncmp(token, "(-",10) == 0){
     ans = two - three;
-    printf("Doesn't work");
+    printf("%4.1f works\n", ans);
   }
   else{
     printf("Please enter a *,/,+,- operator\n");
